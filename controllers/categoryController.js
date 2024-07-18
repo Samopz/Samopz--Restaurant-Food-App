@@ -74,6 +74,7 @@ const updateCatController = async (req, res) => {
     res.status(200).send({
       success: true,
       message: "Category Updated successfully",
+      updatedCategory,
     });
   } catch (error) {
     console.log(error);

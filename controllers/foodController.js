@@ -1,5 +1,6 @@
 const foodModel = require("../models/foodModel");
 const orderModel = require("../models/orderModel");
+const restaurantModel = require("../models/restaurantModel");
 const createFoodController = async (req, res) => {
   try {
     const {
@@ -127,6 +128,7 @@ const getFoodByRestaurantController = async (req, res) => {
       success: true,
       totalFoods: food.length,
       message: "Food based on Restaurant!",
+      restaurantId,
       food,
     });
   } catch (error) {

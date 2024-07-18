@@ -9,7 +9,7 @@ const connectDb = require("./config/db");
 dotenv.config();
 
 // db connection
-connectDb();
+// connectDb();
 
 // rest object
 const app = express();
@@ -37,6 +37,8 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT;
 
 // listen
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`Node Server running on port ${PORT}`.white.bgMagenta);
+  // db connection
+  await connectDb();
 });
